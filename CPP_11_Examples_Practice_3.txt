@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+
+int operator"" _bin (const char * str, size_t l) {
+    int ret = 0;
+    for (auto i=0; i<l; i++) {
+        ret = ret << 1;
+        if ('1' == str[i])
+            ret+=1;
+    }
+    return ret;
+}
+int add (const int &a, const int &b) {
+    return a+b;
+}
+
+int main()
+{
+    int x = 6, y = 9;
+//    auto add = [](int &a, int &b) {return a+b;};
+//    cout << add (9, 10);
+//    cout << add (x, y);
+
+    cout << "110"_bin << endl;
+    cout << "110101"_bin << endl;
+    return 0;
+}

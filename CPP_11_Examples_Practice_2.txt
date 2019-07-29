@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Base {
+    public:
+    void SetX (int& in_iX) {m_iX=in_iX;}
+    int GetX () const {Count++;return m_iX;}
+    private:
+    int m_iX;
+    mutable int Count = 0;
+};
+
+void PrintBase (const Base& b)
+{
+    cout << b.GetX () << endl;
+}
+
+int main()
+{
+   vector<int> a = {10,3,4,5};
+   Base b;
+   
+   for (auto x : a)
+   {
+       b.SetX (x);
+       PrintBase (b);
+   }
+   
+   return 0;
+}

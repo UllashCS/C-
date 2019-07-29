@@ -1,0 +1,27 @@
+#include <iostream>
+#include <functional>
+
+using namespace std;
+
+class Base {
+    public:
+    void Give (const function<void(int)> in_Lambda){
+        
+        in_Lambda (a);
+    }
+    private:
+    int a = 5;
+};
+
+int main()
+{
+    int c = 3;
+    Base b;
+    auto lambda = [&](int i){ c = i; };
+    
+    cout<<"Before "<<c<<endl;
+    b.Give (lambda);
+    cout<<"After "<<c<<endl;
+    
+    return 0;
+}

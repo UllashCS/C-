@@ -1,0 +1,74 @@
+#include <iostream>
+#include <vector>
+#include <assert.h>
+
+using namespace std;
+
+void foo (int i) {cout<<"int"<<endl;}
+void foo (const char* i) {cout<<"char *"<<endl;}
+
+class Base {
+    public:
+    Base(){
+        cout<< "Default " << x++ <<endl;
+    }
+    
+    Base (int a):Base(){
+        cout<< a << " " << x++ <<endl;
+    }
+    
+    Base (double f):Base(0){
+        cout<< f << " " << x++ <<endl;
+    }
+    
+    virtual void Display (int a){
+        cout<< "a = " << a <<endl;
+    }
+    
+    private:
+    int x = 5;
+};
+
+class Derived : private Base {
+  public:
+  void Display (int a) override final{
+      cout<< "a = " << a <<endl;
+  }
+};
+
+class Derived_Level2 
+// : private Derived 
+{
+  public:
+  Derived_Level2() = default;
+  Derived_Level2 (double) = delete;
+  Derived_Level2 & operator=(const Derived_Level2&) = delete;
+  Derived_Level2 (int a)
+  {
+    cout<< "Derived_Level2 -> a = " << a <<endl;
+  }
+//   void Display (int a) override{
+//       cout<< "a = " << a <<endl;
+//   }
+};
+
+int main()
+{
+   vector<int> a = {10,3,4,5};
+   Base b(1.5);
+   Derived d;
+   d.Display(1);
+   
+   Derived_Level2 DL1(6), DL2(3);
+//   Derived_Level2 DL1(6.98), DL2(67.3);
+
+    // DL2 = DL1;
+   
+   for (auto x : a)
+   {
+       cout << x << endl;
+   }
+   
+   foo (nullptr);
+   return 0;
+}

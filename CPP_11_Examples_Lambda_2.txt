@@ -1,0 +1,75 @@
+#include <iostream>
+#include <functional>
+
+using namespace std;
+
+namespace Input{
+class Input1 {
+    public:
+    void getInput (const function<void(int)> in_Lambda) {
+        in_Lambda (Val);
+    }
+    
+    private:
+    int Val = 6;
+};
+
+class Input2 {
+    public:
+    void getInput (const function<void(int)> in_Lambda) {
+        in_Lambda (Val);
+    }
+    
+    private:
+    int Val = 4;
+};
+}
+
+namespace Result {
+class Compare {
+    public:
+    Compare (int a, int b) {
+        this->a = a;
+        this->b = b;
+    }
+    
+    void Display () {
+        if (a>b){
+            cout << "a is bigger" << endl;
+        }
+        else if (a<b) {
+            cout << "b is bigger" << endl;
+        }
+        else {
+            cout << "both are same" << endl;
+        }
+    }
+    
+    private:
+    int a;
+    int b;
+};
+}
+
+using namespace Input;
+using namespace Result;
+int main()
+{
+    Input1 I1;
+    Input2 I2;
+    int a = 0, b=1;
+    auto lambda1 = [&](int i){ a = i; };
+    auto lambda2 = [&](int i){ b = i; };
+    
+    Compare before(a,b);
+    
+    I1.getInput (lambda1);
+    I2.getInput (lambda2);
+    
+    Compare after(a,b);
+    
+    before.Display ();
+    after.Display ();
+    
+    return 0;
+}

@@ -41,3 +41,17 @@ Changes to be committed:
 Create commit
 git commit -m "Your message about the commit"
 
+Create New branches:
+git checkout -b <my branch name>
+
+Check the branches:
+git branch
+
+To link local git with the Git hub
+
+remote add origin <address>
+git push -u origin master
+
+To delete a branch
+git branch -d TestBranch
+

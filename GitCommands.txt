@@ -60,6 +60,8 @@ Adding this new line for test on 24th March2020
 27th March, 2020
 Learning Git Diff
 
+<<<<<<< Updated upstream
 31st March,2020
 Learning Stash
 Test 1
+Stash Test2

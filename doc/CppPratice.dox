@@ -1,0 +1,18 @@
+/**
+\mainpage CPP Doxygen Practice
+\tableofcontents{HTML:2}
+\section _sec_overview Overview
+\subsection _sec_overview_descr Module Description
+The Clock Monitor is the module resposible to handle oscillator clock incorrect behaviour.
+The module shall trigger a safe state whenever a failure on the oscillators is detected by Hardware.
+The modules of the Safety Manager Clock Monitor are:
+\subsection _sec_overview_in-out_diag Input-Output Diagram
+\subsection _sec_overview_interdependencies  Module Interdependencies
+\subsection _sec_overview_use_cases          Use Cases
+\subsection	_sec_overview_resource_usage     Resource Usage
+\section _sec_exp_if                         Export Interface
+\subsection _sec_exp_if_static               Static View
+(This is documented in the header file(s) of themodule)
+../core/core/SafMLLD.h
+\subsection _sec_exp_if_dynamic              Dynamic View
+*/

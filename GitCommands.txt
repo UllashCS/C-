@@ -60,8 +60,56 @@ Adding this new line for test on 24th March2020
 27th March, 2020
 Learning Git Diff
 
-<<<<<<< Updated upstream
 31st March,2020
 Learning Stash
 Test 1
-Stash Test2
+
+git commit --allow-empty -m "Trigger notification"
+
+____________________________________________________________________________________________________________________
+--------------------------------------------------------------------------------------------------------------------
+git reset --hard
+git clean -fdx
+git reset --hard
+git clean -fdx
+git pull
+git pull
+git pull
+git pull
+git lfs pull
+git lfs pull
+git submodule update --init --recursive
+git submodule foreach git reset --hard
+git submodule foreach git clean -fdx
+git submodule foreach git reset --hard
+git submodule foreach git clean -fdx
+git submodule foreach git lfs pull
+git submodule foreach git lfs pull
+toolenv\prepare-tools.bat
+cmake --version
+doit --version
+setx CTCHOME C:\conan\.conan\data\ctc\9.1.0\icci\stable\package\3475bd55b91ae904ac96fde0f106a136ab951a5e\
+doit variants.list
+doit build_config.show variant=IcBox
+doit build_config.show
+doit rte
+doit cmake --generator="Ninja" --build-type=Release
+doit cmake  --generator="Ninja" --build-type=Debug
+doit build --core=ac
+doit build --core=gc
+
+doit find_vcvars
+set CC=cl
+doit cmake --coverage --generator=Ninja variant=Unittest -DCONTI_AC_STANDALONE=ON
+
+ninja run_gtf_reports__all
+ninja {your_module_name}_reports
+
+doit forget cmake
+
+git remote prune origin
+____________________________________________________________________________________________________________________
+--------------------------------------------------------------------------------------------------------------------
+
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/Ullash_LP
